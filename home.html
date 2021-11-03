@@ -34,3 +34,41 @@
     ]);
     
     </script>
+
+<script type="module">
+
+    // import kaboom lib
+    import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
+
+    //How to create a new zombie object
+    const zombie = {x : 0, y : 40, animation : "appear", frame : 1 }
+
+
+    //The Queue of the zombie customers waiting to be served
+    const zombieCustomers = [];
+
+    const sprites = {"appear" : 11, "die" : 8, "drink": 7, "idle" : 6, "walk": 10}
+
+
+    // initialize kaboom context
+    kaboom();
+
+    for (const [animation, frames] of Object.entries(sprites)){
+        let fIndex = 0;
+        while(fIndex < frames){
+            console.log(`${animation}_${fIndex}`, "img/${animation}/${animation}_${fIndex}")
+            loadSprite(`${animation}_${fIndex}`, `img/${animation}/${animation}_${fIndex}`);
+        }
+    }
+    
+
+    //loadSound("horse", "sounds/horse.mp3");
+
+    
+    // add a piece of text at position (120, 80)
+    add([
+        sprite("appear_2"),
+        pos(120, 80),
+    ]);
+    
+    </script>
