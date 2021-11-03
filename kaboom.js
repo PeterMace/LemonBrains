@@ -1,6 +1,8 @@
+import kaboom from "https://unpkg.com/kaboom/dist/kaboom.mjs";
+
 export const k = kaboom({
-     width: 640,
-     height:480,
+     width: 320,
+     height:240,
      scale: 2.5
 });
 
