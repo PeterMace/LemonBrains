@@ -1,6 +1,6 @@
 import k from './kaboom.js';
 
-export default function Animation(){
+export default function Animation() {
     const zombie = k.add([
         k.sprite('zombie', {
             animSpeed: 0.1,
@@ -10,12 +10,17 @@ export default function Animation(){
         k.origin('center'),
         k.scale(1)
     ])
+    zombie.play("appear");
 
-    k.keyPress("left", () => {
-        zombie.play("appear");
-    })
 
-    k.keyRelease('left', ()=>{
+    // const idlezombie = k.sprite('zombieIdle', {
+    //     animSpeed: 0.1,
+    //     frame: 1
+    // })
+    // k.add([
+    //     idlezombie,
+    //     k.pos(20, 100),
+    //     k.area()
+    // ])
 
-    })
 }
